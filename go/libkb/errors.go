@@ -2412,3 +2412,13 @@ func (e EphemeralPairwiseMACsMissingUIDsError) Error() string {
 }
 
 //=============================================================================
+
+type RecipientNotFoundError struct {
+	error
+}
+
+func NewRecipientNotFoundError(message string) error {
+	return RecipientNotFoundError{
+		error: fmt.Errorf(message),
+	}
+}
